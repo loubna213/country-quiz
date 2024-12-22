@@ -38,7 +38,6 @@ const QuizScreen = () => {
                     {
                         answerOptions.map((option: any) => (
                             <>
-                                
                                 <p key={option} onClick={() => dispatch({ type: 'answer', payload: option})} className="option">{option}</p>
                             </>
                         ))
