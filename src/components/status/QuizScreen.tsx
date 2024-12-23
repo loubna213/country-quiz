@@ -37,15 +37,9 @@ const QuizScreen = () => {
                 <div className="grid grid-cols-2 gap-6">
                     {
                         answerOptions.map((option: any) => (
-                            <>
-<<<<<<< HEAD
-                                <div key={option} onClick={() => dispatch({ type: 'answer', payload: option})} className="option">
-                                    <p>{option}</p>
-                                </div>
-=======
-                                <p key={option} onClick={() => dispatch({ type: 'answer', payload: option})} className="option">{option}</p>
->>>>>>> cf9bcee70e1b24a71d18065248ba11d699d91c5b
-                            </>
+                            <div key={option} onClick={() => dispatch({ type: 'answer', payload: option})} className="option">
+                                <p>{option}</p>
+                            </div>
                         ))
                     }
                 </div>
