@@ -18,7 +18,7 @@ interface InitialState {
 
 const initialState: InitialState = {
     questions: [],
-    status: 'ready',
+    status: 'start',
     score: 0,
     index: 0,
     answer: '',
