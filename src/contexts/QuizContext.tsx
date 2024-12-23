@@ -42,9 +42,7 @@ const reducer = (state: InitialState, action: Action) => {
         case 'ready':
             return { ...state, status: 'ready' }
         case 'getQuestion':
-            return { ...state, questions: action.payload }
-        case 'start': 
-            return { ...state, status: 'start', index: 0, score: 0 }
+            return { ...state, questions: action.payload, status: 'start' }
         case 'answer':
             const isCorrect = state.questions[state.index].name === action.payload;
             // Increment index only if the answer is correct
