@@ -40,11 +40,11 @@ interface Action {
 const reducer = (state: InitialState, action: Action) => {
     switch (action.type) {
         case 'ready':
-            return { ...state, status: 'ready', index: 0, score: 0 }
+            return { ...state, status: 'ready' }
         case 'getQuestion':
             return { ...state, questions: action.payload }
         case 'start': 
-            return { ...state, status: 'start' }
+            return { ...state, status: 'start', index: 0, score: 0 }
         case 'answer':
             const isCorrect = state.questions[state.index].name === action.payload;
             // Increment index only if the answer is correct
@@ -58,7 +58,7 @@ const reducer = (state: InitialState, action: Action) => {
                 score: state.score + (isCorrect ? 1 : 0)
             };
             case 'finish':
-            return { ...state, status: 'finish'}
+                return { ...state, status: 'finish'}
         default:
             throw new Error('Unknown Action')
     }
