@@ -1,7 +1,7 @@
 import { useQuiz } from "../../contexts/QuizContext"
 
 const QuizScreen = () => {
-    const { index, questions, dispatch, answer, userAnswer } = useQuiz();
+    const { index, questions, dispatch } = useQuiz();
     const currentQuestion = questions[index]
     const answerOptions = [questions[index].name];
     
