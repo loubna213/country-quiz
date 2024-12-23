@@ -50,8 +50,14 @@ const reducer = (state: InitialState, action: Action) => {
             // Increment index only if the answer is correct
             const nextIndex = action.payload ? state.index + 1 : state.index;
             
-            return { ...state, answer: state.questions[state.index].name, userAnswer: action.payload, index: nextIndex, score: state.score + (isCorrect ? 1 : 0)};
-        case 'finish':
+            return { 
+                ...state, 
+                answer: state.questions[state.index].name, 
+                userAnswer: action.payload, 
+                index: nextIndex, 
+                score: state.score + (isCorrect ? 1 : 0)
+            };
+            case 'finish':
             return { ...state, status: 'finish'}
         default:
             throw new Error('Unknown Action')

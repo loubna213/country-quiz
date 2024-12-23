@@ -10,9 +10,10 @@ function App() {
     <section className="h-screen w-screen flex flex-col justify-center items-center" style={{background: 'url(/bg.jpg)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}>
       <div className="gray-container">
 
-        { status === 'ready' && <ReadyScreen /> }
-        { (status === 'start' && index < 10 ) && <QuizScreen/> }
+        { status === '' && <ReadyScreen /> }
+        { (status === 'ready' && index < 10 ) && <QuizScreen/> }
         { index === 10 && <FinishScreen/>}
+
       </div>
     </section>
   )
