@@ -18,7 +18,7 @@ interface InitialState {
 
 const initialState: InitialState = {
     questions: [],
-    status: 'ready',
+    status: 'start',
     score: 0,
     index: 0,
     answer: '',
@@ -68,12 +68,13 @@ const QuizProvider = ({ children }: { children: React.ReactNode }) => {
     const [state, dispatch] = useReducer(reducer, initialState);
     const { questions, status, answer, userAnswer, score, index } = state;
 
-    let counter = 1;
 
     useEffect(() => {
+        let counter = 1;
+        
         async function getQuestions() {
             try {
-                const res = await fetch("https://restcountries.com/v3.1/all")
+                const res = await fetch("https://restcountries.com/v3.1/all");
                 const data = await res.json();
 
                 const countryData = data.map((country: any) => {
@@ -81,14 +82,14 @@ const QuizProvider = ({ children }: { children: React.ReactNode }) => {
                     
                     return { id: counter++, name: country.name.common, capital: capital };
                 })
-                
                 dispatch({ type: "getQuestion", payload: countryData})
             } catch (error) {
-                console.log(error) 
+                console.log(error)
             }
         }
         getQuestions();
-    }, [ ])
+    }, [])
+
 
     console.log(questions)
 

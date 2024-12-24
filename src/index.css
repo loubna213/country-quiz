@@ -10,7 +10,7 @@ body {
 
 @layer utilities {
   .gray-container {
-    @apply py-12 px-4 w-2/3 rounded-lg bg-primary flex flex-col justify-center items-center gap-4;
+    @apply py-16 px-4 w-2/3 rounded-lg bg-primary flex flex-col justify-center items-center gap-4;
   }
   .option {
     @apply flex justify-center gap-4 bg-primary-100 py-5 px-8 rounded-lg text-center cursor-pointer hover:pink-gradiant

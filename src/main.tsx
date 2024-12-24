@@ -5,9 +5,10 @@ import App from './App.tsx'
 import QuizProvider from './contexts/QuizContext.tsx'
 
 createRoot(document.getElementById('root')!).render(
-  
+  <StrictMode>
     <QuizProvider>
       <App />
     </QuizProvider>
+  </StrictMode>
  
 )
