@@ -6,7 +6,7 @@ import ReadyScreen from "./components/status/ReadyScreen"
 import { useQuiz } from "./contexts/QuizContext"
 
 function App() {
-  const { questions, status, index } = useQuiz()
+  const { questions, status, index } = useQuiz();
   
   return (
     <section className="h-screen w-screen flex flex-col justify-center items-center" style={{background: 'url(/bg.jpg)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}>
