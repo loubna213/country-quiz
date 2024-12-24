@@ -12,8 +12,7 @@ function App() {
   return (
     <section className="h-screen w-screen flex flex-col justify-center items-center" style={{background: 'url(/bg.jpg)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}>
       <div className="gray-container">
-
-        { status === '' && <ReadyScreen /> }
+        { status === 'ready' && <ReadyScreen /> }
         { questions.length > 0 && (status === 'start' && index < 10 ) && <QuizScreen/> }
         { index === 10 && <FinishScreen/>}
 
